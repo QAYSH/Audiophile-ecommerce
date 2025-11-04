@@ -1,8 +1,7 @@
-// app/layout.tsx - UPDATED
+// app/layout.tsx - TEMPORARY FIX
 import './globals.css'
 import { Footer } from '../components/layout/footer'
 import { CartProvider } from '../lib/cart-context'
-import { ConvexClientProvider } from '../components/providers/convex-client-provider'
 
 export const metadata = {
   title: 'Audiophile - Premium Audio Equipment',
@@ -17,12 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <ConvexClientProvider>
-          <CartProvider>
-            {children}
-            <Footer />
-          </CartProvider>
-        </ConvexClientProvider>
+        <CartProvider>
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   )
