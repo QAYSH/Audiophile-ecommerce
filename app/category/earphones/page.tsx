@@ -1,0 +1,141 @@
+// app/category/earphones/page.tsx - Updated with navigation links
+import { Header } from '../../../components/layout/header'
+import { Button } from '../../../components/ui/button'
+import Link from 'next/link'
+
+export default function EarphonesCategory() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      {/* Page Header */}
+      <section className="bg-black text-white py-16">
+        <div className="container mx-auto px-6">
+          <h1 className="text-3xl md:text-4xl font-bold uppercase text-center">
+            EARPHONES
+          </h1>
+        </div>
+      </section>
+
+      {/* Product: YXI WIRELESS EARPHONES */}
+      <section className="container mx-auto px-6 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+          {/* Product Image */}
+          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center">
+            <span className="text-gray-600">[YXI WIRELESS EARPHONES Image]</span>
+          </div>
+          
+          {/* Product Content */}
+          <div className="text-center md:text-left">
+            <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
+              NEW PRODUCT
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+              YXI WIRELESS EARPHONES
+            </h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              Talky your listening experience with bespoke dynamic drivers from the new YXI 
+              Wireless Earghones. Enjoy incredible high-foodly reception in rough environments 
+              with its active major cancellation feature.
+            </p>
+            <Button 
+              variant="primary" 
+              href="/product/yx1-earphones"
+            >
+              SEE PRODUCT
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Navigation */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {/* Headphones Card */}
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+            <Link href="/category/headphones" className="block h-full">
+              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
+                  <span className="text-gray-600 text-xs">Headphones</span>
+                </div>
+              </div>
+              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">HEADPHONES</h3>
+                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+                  SHOP
+                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+          
+          {/* Speakers Card */}
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+            <Link href="/category/speakers" className="block h-full">
+              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
+                  <span className="text-gray-600 text-xs">Speakers</span>
+                </div>
+              </div>
+              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">SPEAKERS</h3>
+                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+                  SHOP
+                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+          
+          {/* Earphones Card */}
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+            <Link href="/category/earphones" className="block h-full">
+              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
+                  <span className="text-gray-600 text-xs">Earphones</span>
+                </div>
+              </div>
+              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">EARPHONES</h3>
+                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+                  SHOP
+                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+          {/* Image Side */}
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center">
+            <span className="text-gray-600">[About Us Image]</span>
+          </div>
+          
+          {/* Content Side */}
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
+              BRINGING YOU THE BEST AUDIO GEAR
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+              Located at the heart of New York City, Audiophile is the premier store for high 
+              end headphones, earphones, speakers, and audio accessories. We have a large 
+              showroom and luxury demonstration rooms available for you to choose and experience 
+              a wide range of key products. Stop by our store to meet some of the fantastic 
+              people who make Audiophile the best place to buy your portable audio equipment.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
