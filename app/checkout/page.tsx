@@ -1,4 +1,4 @@
-// app/checkout/page.tsx - FIXED EXPORT
+// app/checkout/page.tsx - FIXED VERSION
 'use client';
 
 import { Header } from '../../components/layout/header';
@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
+import Image from 'next/image';
 
 // Define validation schema with Zod
 const checkoutSchema = z.object({
@@ -39,7 +40,32 @@ const checkoutSchema = z.object({
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
-// Order Confirmation Modal Component
+// Helper function to get product image based on product name - FIXED VERSION
+const getProductImage = (productName: string | undefined) => {
+  // Handle undefined or null product names
+  if (!productName) {
+    return '/images/homepage-headphone.png';
+  }
+
+  const imageMap: { [key: string]: string } = {
+    'XX99 MARK II HEADPHONES': '/images/homepage-headphone.png',
+    'XX99 MARK I HEADPHONES': '/images/headphone2.png',
+    'XX59 HEADPHONES': '/images/headphone3.png',
+    'ZX9 SPEAKER': '/images/homepage-speaker.png',
+    'ZX7 SPEAKER': '/images/speaker2.png',
+    'YX1 WIRELESS EARPHONES': '/images/homepage-earphone.png',
+    'XX99 MARK II': '/images/homepage-headphone.png',
+    'XX99 MARK I': '/images/headphone2.png',
+    'XX59': '/images/headphone3.png',
+    'ZX9': '/images/homepage-speaker.png',
+    'ZX7': '/images/speaker2.png',
+    'YX1': '/images/homepage-earphone.png',
+  };
+
+  return imageMap[productName.toUpperCase()] || '/images/homepage-headphone.png';
+};
+
+// Order Confirmation Modal Component - FIXED VERSION
 function OrderConfirmationModal({ 
   isOpen, 
   onClose, 
@@ -77,20 +103,28 @@ function OrderConfirmationModal({
         {/* Order Summary */}
         <div className="bg-gray-100 rounded-lg overflow-hidden mb-6">
           {/* First Item */}
-          <div className="p-4 flex items-center justify-between border-b border-gray-300">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-300 rounded flex items-center justify-center">
-                <span className="text-xs">Img</span>
+          {firstItem && (
+            <div className="p-4 flex items-center justify-between border-b border-gray-300">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src={getProductImage(firstItem?.name)}
+                    alt={firstItem?.name || 'Product'}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm">{firstItem?.name || 'Product'}</h3>
+                  <p className="text-gray-500 text-sm">${firstItem?.price?.toLocaleString() || '0'}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-sm">{firstItem?.name}</h3>
-                <p className="text-gray-500 text-sm">${firstItem?.price.toLocaleString()}</p>
+              <div className="text-gray-500 text-sm font-bold">
+                x{firstItem?.quantity || 1}
               </div>
             </div>
-            <div className="text-gray-500 text-sm font-bold">
-              x{firstItem?.quantity}
-            </div>
-          </div>
+          )}
 
           {/* Other Items */}
           {otherItemsCount > 0 && (
@@ -122,7 +156,7 @@ function OrderConfirmationModal({
   );
 }
 
-// Main Checkout Page Component - FIXED EXPORT
+// Main Checkout Page Component - FIXED VERSION
 export default function CheckoutPage() {
   const { cartItems, getTotalPrice, clearCart } = useCart();
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -485,20 +519,26 @@ export default function CheckoutPage() {
                     <div key={item.id} className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         {/* Product Image */}
-                        <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                          <span className="text-xs text-gray-400">Img</span>
+                        <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+                          <Image
+                            src={getProductImage(item.name)}
+                            alt={item.name || 'Product'}
+                            width={64}
+                            height={64}
+                            className="object-contain"
+                          />
                         </div>
                         
                         {/* Product Info */}
                         <div>
-                          <h3 className="font-bold text-sm">{item.name}</h3>
-                          <p className="text-gray-500 text-sm">${item.price.toLocaleString()}</p>
+                          <h3 className="font-bold text-sm">{item.name || 'Product'}</h3>
+                          <p className="text-gray-500 text-sm">${item.price?.toLocaleString() || '0'}</p>
                         </div>
                       </div>
 
                       {/* Quantity */}
                       <div className="text-gray-500 text-sm font-bold">
-                        x{item.quantity}
+                        x{item.quantity || 1}
                       </div>
                     </div>
                   ))}

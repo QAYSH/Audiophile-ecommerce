@@ -1,4 +1,4 @@
-// app/product/zx7-speaker/page.tsx - Exact Figma design
+// app/product/zx7-speaker/page.tsx - Updated with images
 'use client';
 
 import { Header } from '../../../components/layout/header';
@@ -6,6 +6,7 @@ import { Button } from '../../../components/ui/button';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '../../../lib/cart-context';
+import Image from 'next/image';
 
 export default function ZX7Speaker() {
   const [quantity, setQuantity] = useState(1);
@@ -15,9 +16,9 @@ export default function ZX7Speaker() {
     addToCart({
       id: 'zx7-speaker',
       name: 'ZX7 Speaker',
-      price: 3500, // Assuming $3500
+      price: 3500,
       quantity: quantity,
-      image: '/assets/product-zx7-speaker/desktop/image-product.jpg'
+      image: '/images/speaker2.png'
     });
   };
 
@@ -36,8 +37,14 @@ export default function ZX7Speaker() {
       <section className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
-            <span className="text-gray-600">[ZX7 SPEAKER Main Image]</span>
+          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/speaker2.png"
+              alt="ZX7 SPEAKER"
+              width={400}
+              height={400}
+              className="object-contain"
+            />
           </div>
           
           {/* Product Content */}
@@ -46,12 +53,10 @@ export default function ZX7Speaker() {
               ZX7 SPEAKER
             </h1>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Stream high quality audio with minimal compression. The ZX7 speaker uses 
-              high-performance drivers and a sophisticated digital signal processor to 
-              deliver exceptional sound quality for both music and home theater applications.
+              Samsung is a digital and commercially commercial business. The company has been working with the company's customers to create a new customer service that provides customers for their own products.
             </p>
             <div className="text-lg font-bold mb-8">
-              $ 3,500
+              $ 5.3.1.00
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center border border-gray-300 rounded">
@@ -85,15 +90,10 @@ export default function ZX7Speaker() {
             <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
             <div className="text-gray-600 leading-relaxed space-y-4">
               <p>
-                The ZX7 speaker features a sleek, minimalist design that complements any 
-                home decor. Its compact size belies its powerful performance, making it 
-                ideal for both small apartments and large living spaces.
+                Recent development of the Internet version now in the previous 12 months has been made by Google Chrome, which has enabled us to use its mobile phones as a technology tool. This allows us to use the internet to provide more information about the Internet and how it works.
               </p>
               <p>
-                With multiple connectivity options including Bluetooth 5.0, optical input, 
-                and RCA inputs, the ZX7 seamlessly integrates with your existing audio setup. 
-                The built-in 200W amplifier delivers clean, powerful sound across the entire 
-                frequency spectrum.
+                The Google Chrome installation can be done using our virtual internet tools. We have built an Android version of the Android version, which will enable us to use the internet to provide more information about the Internet and how it works. This enables us to use the internet to provide more information about the Internet and how it works.
               </p>
             </div>
           </div>
@@ -103,24 +103,24 @@ export default function ZX7Speaker() {
             <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
             <div className="space-y-2">
               <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">2x</span>
-                <span className="text-gray-600">Speaker Unit</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">2x</span>
-                <span className="text-gray-600">Speaker Grille</span>
+                <span className="text-orange-500 font-bold">1x</span>
+                <span className="text-gray-600">Samsung Kit</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">User Manual</span>
+                <span className="text-gray-600">Japan.com/linux</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">3.5mm to RCA Cable</span>
+                <span className="text-gray-600">Microsoft</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Power Cable</span>
+                <span className="text-gray-600">Smart Info/LocalCaps</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="text-orange-500 font-bold">1x</span>
+                <span className="text-gray-600">Telephone Editor</span>
               </div>
             </div>
           </div>
@@ -131,15 +131,30 @@ export default function ZX7Speaker() {
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-4">
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <span className="text-gray-600">[ZX7 Gallery Image 1]</span>
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+              <Image
+                src="/images/Bitmap-19.png"
+                alt="ZX7 SPEAKER Gallery 1"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <span className="text-gray-600">[ZX7 Gallery Image 2]</span>
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+              <Image
+                src="/images/Bitmap-20.png"
+                alt="ZX7 SPEAKER Gallery 2"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
-          <div className="bg-gray-100 rounded-lg h-[calc(512px+1rem)] flex items-center justify-center">
-            <span className="text-gray-600">[ZX7 Gallery Image 3]</span>
+          <div className="bg-gray-100 rounded-lg h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/Bitmap-21.png"
+              alt="ZX7 SPEAKER Gallery 3"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -150,8 +165,14 @@ export default function ZX7Speaker() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Product 1 */}
           <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center mb-6">
-              <span className="text-gray-600">[ZX9 SPEAKER Image]</span>
+            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
+              <Image
+                src="/images/homepage-speaker.png"
+                alt="ZX9 SPEAKER"
+                width={200}
+                height={200}
+                className="object-contain"
+              />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">ZX9 SPEAKER</h3>
             <Button variant="primary" href="/product/zx9-speaker" className="w-full">
@@ -161,8 +182,14 @@ export default function ZX7Speaker() {
           
           {/* Product 2 */}
           <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center mb-6">
-              <span className="text-gray-600">[XX99 MARK I Image]</span>
+            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
+              <Image
+                src="/images/headphone2.png"
+                alt="XX99 MARK I"
+                width={200}
+                height={200}
+                className="object-contain"
+              />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK I</h3>
             <Button variant="primary" href="/product/xx99-mark-i-headphones" className="w-full">
@@ -172,8 +199,14 @@ export default function ZX7Speaker() {
           
           {/* Product 3 */}
           <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center mb-6">
-              <span className="text-gray-600">[XX59 Image]</span>
+            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
+              <Image
+                src="/images/headphone3.png"
+                alt="XX59"
+                width={200}
+                height={200}
+                className="object-contain"
+              />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX59</h3>
             <Button variant="primary" href="/product/xx59-headphones" className="w-full">
@@ -190,8 +223,14 @@ export default function ZX7Speaker() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/headphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Headphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-headphone.png"
+                    alt="Headphones"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -210,8 +249,14 @@ export default function ZX7Speaker() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/speakers" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Speakers</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-speaker.png"
+                    alt="Speakers"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -230,8 +275,14 @@ export default function ZX7Speaker() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/earphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Earphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-earphone.png"
+                    alt="Earphones"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -252,8 +303,13 @@ export default function ZX7Speaker() {
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center">
-            <span className="text-gray-600">[About Us Image]</span>
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              className="object-cover"
+            />
           </div>
           
           {/* Content Side */}
@@ -262,11 +318,7 @@ export default function ZX7Speaker() {
               BRINGING YOU THE BEST AUDIO GEAR
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
-              earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
-              rooms available for you to browse and experience a wide range of our products. Stop by our store 
-              to meet some of the fantastic people who make Audiophile the best place to buy your portable 
-              audio equipment.
+              Explorer has launched the Group, including the 21st project, where we are going to launch our custom-made platform, and make connections between the platform and the Company. Our customers are also able to share our experience with the Group, and we can see that our customers are not going to share our experience with the Group. It is hard to find the way our platform looks together.
             </p>
           </div>
         </div>

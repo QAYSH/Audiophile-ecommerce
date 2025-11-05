@@ -1,15 +1,41 @@
-// components/cart/cart-modal.tsx
+// components/cart/cart-modal.tsx - UPDATED WITH IMAGES
 'use client';
 
 import { useCart } from '../../lib/cart-context';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 interface CartModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+// Helper function to get product image based on product name
+const getProductImage = (productName: string | undefined) => {
+  // Handle undefined or null product names
+  if (!productName) {
+    return '/images/homepage-headphone.png';
+  }
+
+  const imageMap: { [key: string]: string } = {
+    'XX99 MARK II HEADPHONES': '/images/homepage-headphone.png',
+    'XX99 MARK I HEADPHONES': '/images/headphone2.png',
+    'XX59 HEADPHONES': '/images/headphone3.png',
+    'ZX9 SPEAKER': '/images/homepage-speaker.png',
+    'ZX7 SPEAKER': '/images/speaker2.png',
+    'YX1 WIRELESS EARPHONES': '/images/homepage-earphone.png',
+    'XX99 MARK II': '/images/homepage-headphone.png',
+    'XX99 MARK I': '/images/headphone2.png',
+    'XX59': '/images/headphone3.png',
+    'ZX9': '/images/homepage-speaker.png',
+    'ZX7': '/images/speaker2.png',
+    'YX1': '/images/homepage-earphone.png',
+  };
+
+  return imageMap[productName.toUpperCase()] || '/images/homepage-headphone.png';
+};
 
 export function CartModal({ isOpen, onClose }: CartModalProps) {
   const { 
@@ -100,14 +126,20 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                   <div key={item.id} className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       {/* Product Image */}
-                      <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <span className="text-xs text-gray-400">Image</span>
+                      <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+                        <Image
+                          src={getProductImage(item.name)}
+                          alt={item.name || 'Product'}
+                          width={64}
+                          height={64}
+                          className="object-contain"
+                        />
                       </div>
                       
                       {/* Product Info */}
                       <div>
-                        <h3 className="font-bold text-sm">{item.name}</h3>
-                        <p className="text-gray-500 text-sm">${item.price.toLocaleString()}</p>
+                        <h3 className="font-bold text-sm">{item.name || 'Product'}</h3>
+                        <p className="text-gray-500 text-sm">${item.price?.toLocaleString() || '0'}</p>
                       </div>
                     </div>
 
