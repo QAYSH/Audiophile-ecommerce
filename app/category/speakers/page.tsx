@@ -1,7 +1,8 @@
-// app/category/speakers/page.tsx - Updated with navigation links
+// app/category/speakers/page.tsx - Updated with images
 import { Header } from '../../../components/layout/header'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function SpeakersCategory() {
   return (
@@ -21,8 +22,14 @@ export default function SpeakersCategory() {
       <section className="container mx-auto px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center">
-            <span className="text-gray-600">[ZX9 SPEAKER Image]</span>
+          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/homepage-speaker.png"
+              alt="ZX9 SPEAKER"
+              width={200}
+              height={200}
+              className="object-contain"
+            />
           </div>
           
           {/* Product Content */}
@@ -67,8 +74,14 @@ export default function SpeakersCategory() {
           </div>
           
           {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center order-1 md:order-2">
-            <span className="text-gray-600">[ZX7 SPEAKER Image]</span>
+          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden order-1 md:order-2">
+            <Image
+              src="/images/speaker2.png"
+              alt="ZX7 SPEAKER"
+              width={200}
+              height={200}
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -80,8 +93,14 @@ export default function SpeakersCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/headphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Headphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-headphone.png"
+                    alt="Headphones"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -100,8 +119,14 @@ export default function SpeakersCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/speakers" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Speakers</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-speaker.png"
+                    alt="Speakers"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -120,8 +145,14 @@ export default function SpeakersCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/earphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Earphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-earphone.png"
+                    alt="Earphones"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -142,8 +173,13 @@ export default function SpeakersCategory() {
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center">
-            <span className="text-gray-600">[About Us Image]</span>
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              className="object-fit"
+            />
           </div>
           
           {/* Content Side */}

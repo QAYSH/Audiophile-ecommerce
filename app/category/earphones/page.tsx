@@ -1,7 +1,8 @@
-// app/category/earphones/page.tsx - Updated with navigation links
+// app/category/earphones/page.tsx - Updated with images
 import { Header } from '../../../components/layout/header'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function EarphonesCategory() {
   return (
@@ -17,12 +18,18 @@ export default function EarphonesCategory() {
         </div>
       </section>
 
-      {/* Product: YXI WIRELESS EARPHONES */}
+      {/* Product: YX1 WIRELESS EARPHONES */}
       <section className="container mx-auto px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center">
-            <span className="text-gray-600">[YXI WIRELESS EARPHONES Image]</span>
+          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/homepage-earphone.png"
+              alt="YX1 WIRELESS EARPHONES"
+              width={320}
+              height={320}
+              className="object-contain"
+            />
           </div>
           
           {/* Product Content */}
@@ -31,12 +38,12 @@ export default function EarphonesCategory() {
               NEW PRODUCT
             </span>
             <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              YXI WIRELESS EARPHONES
+              YX1 WIRELESS EARPHONES
             </h2>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Talky your listening experience with bespoke dynamic drivers from the new YXI 
-              Wireless Earghones. Enjoy incredible high-foodly reception in rough environments 
-              with its active major cancellation feature.
+              Talky your listening experience with bespoke dynamic drivers from the new YX1 
+              Wireless Earphones. Enjoy incredible high-fidelity reception in rough environments 
+              with its active noise cancellation feature.
             </p>
             <Button 
               variant="primary" 
@@ -55,8 +62,14 @@ export default function EarphonesCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/headphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Headphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-headphone.png"
+                    alt="Headphones"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -75,8 +88,14 @@ export default function EarphonesCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/speakers" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Speakers</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-speaker.png"
+                    alt="Speakers"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -95,8 +114,14 @@ export default function EarphonesCategory() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/earphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Earphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-earphone.png"
+                    alt="Earphones"
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -117,8 +142,13 @@ export default function EarphonesCategory() {
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center">
-            <span className="text-gray-600">[About Us Image]</span>
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              className="object-cover"
+            />
           </div>
           
           {/* Content Side */}

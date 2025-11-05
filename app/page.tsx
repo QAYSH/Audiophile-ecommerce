@@ -1,7 +1,8 @@
-// app/page.tsx - Updated with navigation links
+// app/page.tsx - Updated with all images
 import { Header } from '../components/layout/header'
 import { Button } from '../components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -10,11 +11,15 @@ export default function Home() {
       
       {/* Hero Section - Text aligned left on desktop, center on mobile */}
       <section className="relative bg-black text-white h-[600px] md:h-[700px] flex items-center">
-        {/* Background Image Placeholder */}
+        {/* Background Image */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
-          <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-            <span className="text-gray-400">[Background Image: assets/bitmap.png]</span>
-          </div>
+          <Image
+            src="/images/Bitmap-1.png"
+            alt="XX99 Mark II Headphones"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -46,8 +51,14 @@ export default function Home() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/headphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Headphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-headphone.png"
+                    alt="Headphones"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -66,8 +77,14 @@ export default function Home() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/speakers" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Speakers</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-speaker.png"
+                    alt="Speakers"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -86,8 +103,14 @@ export default function Home() {
           <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
             <Link href="/category/earphones" className="block h-full">
               <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-xs">Earphones</span>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/homepage-earphone.png"
+                    alt="Earphones"
+                    width={50}
+                    height={50}
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
@@ -107,9 +130,15 @@ export default function Home() {
       {/* ZX9 Speaker Section - Fixed for mobile */}
       <section className="bg-orange-500 rounded-lg overflow-hidden mx-4 sm:mx-6 mb-12 md:mb-16">
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-24 text-center md:text-left relative">
-          {/* Speaker Image Placeholder */}
-          <div className="absolute bottom-0 left-1/2 md:left-10 transform -translate-x-1/2 md:translate-x-0 w-48 h-48 md:w-80 md:h-80 bg-orange-400 rounded-full flex items-center justify-center mb-8 md:mb-0">
-            <span className="text-white text-sm md:text-base">[ZX9 Speaker]</span>
+          {/* Speaker Image */}
+          <div className="absolute bottom-0 left-1/2 md:left-10 transform -translate-x-1/2 md:translate-x-0 w-48 h-48 md:w-80 md:h-80 mb-8 md:mb-0">
+            <Image
+              src="/images/homepage-speaker.png"
+              alt="ZX9 Speaker"
+              width={320}
+              height={320}
+              className="object-contain"
+            />
           </div>
           
           <div className="max-w-md mx-auto md:ml-auto md:mr-0 relative z-10 pt-48 md:pt-0">
@@ -133,9 +162,14 @@ export default function Home() {
       {/* ZX7 Speaker Section - Fixed for mobile */}
       <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
         <div className="bg-gray-100 rounded-lg h-64 md:h-80 relative">
-          {/* Background Image Placeholder */}
-          <div className="absolute inset-0 bg-gray-300 rounded-lg flex items-center justify-center">
-            <span className="text-gray-600">[ZX7 Speaker Image]</span>
+          {/* Background Image */}
+          <div className="absolute inset-0 rounded-lg overflow-hidden">
+            <Image
+              src="/images/Bitmap-5.png"
+              alt="ZX7 Speaker"
+              fill
+              className="object-cover"
+            />
           </div>
           
           <div className="absolute left-4 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2">
@@ -155,8 +189,13 @@ export default function Home() {
       <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-80 flex items-center justify-center">
-            <span className="text-gray-600">[YX1 Earphones]</span>
+          <div className="bg-gray-100 rounded-lg h-64 md:h-80 relative overflow-hidden">
+            <Image
+              src="/images/Bitmap-6.png"
+              alt="YX1 Earphones"
+              fill
+              className="object-cover"
+            />
           </div>
           
           {/* Content Side */}
@@ -177,8 +216,14 @@ export default function Home() {
       <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center order-2 md:order-1">
-            <span className="text-gray-600">[About Us Image]</span>
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 relative overflow-hidden order-2 md:order-1">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              
+              className="object-cover"
+            />
           </div>
           
           {/* Content Side */}
