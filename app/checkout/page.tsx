@@ -1,4 +1,4 @@
-// app/checkout/page.tsx - FIXED VERSION
+// app/checkout/page.tsx - UPDATED WITH CONVEX INTEGRATION
 'use client';
 
 import { Header } from '../../components/layout/header';
@@ -10,6 +10,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 import Image from 'next/image';
+import { useMutation } from 'convex/react';
+import { api } from '../../convex/_generated/api';
 
 // Define validation schema with Zod
 const checkoutSchema = z.object({
@@ -40,9 +42,8 @@ const checkoutSchema = z.object({
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
-// Helper function to get product image based on product name - FIXED VERSION
+// Helper function to get product image based on product name
 const getProductImage = (productName: string | undefined) => {
-  // Handle undefined or null product names
   if (!productName) {
     return '/images/homepage-headphone.png';
   }
@@ -65,7 +66,7 @@ const getProductImage = (productName: string | undefined) => {
   return imageMap[productName.toUpperCase()] || '/images/homepage-headphone.png';
 };
 
-// Order Confirmation Modal Component - FIXED VERSION
+// Order Confirmation Modal Component
 function OrderConfirmationModal({ 
   isOpen, 
   onClose, 
@@ -142,6 +143,13 @@ function OrderConfirmationModal({
           <p className="text-lg font-bold">${grandTotal.toLocaleString()}</p>
         </div>
 
+        {/* Order Number */}
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600">
+            Order #: <span className="font-bold">{orderNumber}</span>
+          </p>
+        </div>
+
         {/* Back to Home Button */}
         <Button 
           variant="primary" 
@@ -156,12 +164,15 @@ function OrderConfirmationModal({
   );
 }
 
-// Main Checkout Page Component - FIXED VERSION
+// Main Checkout Page Component
 export default function CheckoutPage() {
   const { cartItems, getTotalPrice, clearCart } = useCart();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [orderData, setOrderData] = useState<{orderNumber: string; grandTotal: number} | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Convex mutation
+  const createOrderMutation = useMutation(api.orders.createOrder);
 
   // Initialize React Hook Form
   const {
@@ -195,12 +206,72 @@ export default function CheckoutPage() {
     setIsSubmitting(true);
 
     try {
-      // Temporary: Just show confirmation without saving to database
-      const orderNumber = `AU${Date.now()}`;
-      
+      console.log('Creating order with data:', {
+        ...data,
+        items: cartItems,
+        subtotal: getTotalPrice(),
+        shipping: shippingCost,
+        vat: vatAmount,
+        grandTotal: grandTotal,
+      });
+
+      // Create order in Convex
+      const result = await createOrderMutation({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        address: data.address,
+        zip: data.zip,
+        city: data.city,
+        country: data.country,
+        paymentMethod: data.paymentMethod,
+        eMoneyNumber: data.eMoneyNumber || undefined,
+        eMoneyPin: data.eMoneyPin || undefined,
+        items: cartItems.map(item => ({
+          id: item.id,
+          name: item.name || 'Unknown Product',
+          price: item.price || 0,
+          quantity: item.quantity || 1,
+          image: getProductImage(item.name),
+        })),
+        subtotal: getTotalPrice(),
+        shipping: shippingCost,
+        vat: vatAmount,
+        grandTotal: grandTotal,
+      });
+
+      console.log('Order created successfully:', result);
+
+      // Send confirmation email
+      try {
+        const emailResult = await fetch('/api/send-confirmation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...data,
+            orderNumber: result.orderNumber,
+            items: cartItems,
+            subtotal: getTotalPrice(),
+            shipping: shippingCost,
+            vat: vatAmount,
+            grandTotal: grandTotal,
+          }),
+        });
+
+        if (emailResult.ok) {
+          console.log('Confirmation email sent successfully');
+        } else {
+          console.warn('Failed to send email, but order was created successfully');
+        }
+      } catch (emailError) {
+        console.warn('Email sending failed, but order was created:', emailError);
+      }
+
       // Show confirmation modal
       setOrderData({
-        orderNumber: orderNumber,
+        orderNumber: result.orderNumber,
         grandTotal: grandTotal
       });
       setShowConfirmation(true);

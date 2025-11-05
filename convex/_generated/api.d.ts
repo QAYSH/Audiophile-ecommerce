@@ -8,7 +8,7 @@
  * @module
  */
 
-import type * as order from "../order.js";
+import type * as orders from "../orders.js";
 
 import type {
   ApiFromModules,
@@ -25,7 +25,7 @@ import type {
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  order: typeof order;
+  orders: typeof orders;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 
