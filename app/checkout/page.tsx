@@ -244,6 +244,7 @@ export default function CheckoutPage() {
 
       // Send confirmation email
       try {
+        console.log('Attempting to send confirmation email...');
         const emailResult = await fetch('/api/send-confirmation', {
           method: 'POST',
           headers: {
@@ -260,13 +261,15 @@ export default function CheckoutPage() {
           }),
         });
 
+        const emailData = await emailResult.json();
+        
         if (emailResult.ok) {
-          console.log('Confirmation email sent successfully');
+          console.log('✅ Confirmation email sent successfully:', emailData);
         } else {
-          console.warn('Failed to send email, but order was created successfully');
+          console.warn('⚠️ Failed to send email, but order was created:', emailData);
         }
       } catch (emailError) {
-        console.warn('Email sending failed, but order was created:', emailError);
+        console.warn('⚠️ Email sending failed, but order was created:', emailError);
       }
 
       // Show confirmation modal
@@ -280,7 +283,7 @@ export default function CheckoutPage() {
       clearCart();
       
     } catch (error) {
-      console.error('Failed to create order:', error);
+      console.error('❌ Failed to create order:', error);
       alert('There was an error processing your order. Please try again.');
     } finally {
       setIsSubmitting(false);
