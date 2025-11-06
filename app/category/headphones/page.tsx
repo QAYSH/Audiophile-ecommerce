@@ -1,5 +1,6 @@
-// app/category/headphones/page.tsx - Updated with images
+// app/category/headphones/page.tsx - Updated with footer and Figma matching
 import { Header } from '../../../components/layout/header'
+import { Footer } from '../../../components/layout/footer'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,9 +11,9 @@ export default function HeadphonesCategory() {
       <Header />
       
       {/* Page Header */}
-      <section className="bg-black text-white py-16">
+      <section className="bg-black text-white py-8">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl md:text-4xl font-bold uppercase text-center">
+          <h1 className="text-2xl md:text-3xl font-bold uppercase text-center">
             HEADPHONES
           </h1>
         </div>
@@ -20,7 +21,7 @@ export default function HeadphonesCategory() {
 
       {/* Product 1: XX99 MARK II HEADPHONES */}
       <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
           {/* Product Image */}
           <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
             <Image
@@ -37,12 +38,11 @@ export default function HeadphonesCategory() {
             <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
               New Product
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
               XX99 MARK II HEADPHONES
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              This was a 2020 first 1.1 million year to be promoted pipeline that has traditionally 
-              been proven in high-tech engineering, and has led to the growing experience of public quality talent.
+            <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+              The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.
             </p>
             <Button 
               variant="primary" 
@@ -56,16 +56,14 @@ export default function HeadphonesCategory() {
 
       {/* Product 2: XX99 MARK I HEADPHONES */}
       <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
           {/* Product Content - Order reversed on desktop */}
           <div className="text-center md:text-left order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
               XX99 MARK I HEADPHONES
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              As a project leader for healthcare, we operate 2021-based AI+ digital solutions focusing 
-              on creating a diverse range of services, including education, health and safety, and other 
-              advanced skills in healthcare training.
+            <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+              As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.
             </p>
             <Button 
               variant="primary" 
@@ -80,8 +78,8 @@ export default function HeadphonesCategory() {
             <Image
               src="/images/homepage-headphone.png"
               alt="XX99 MARK I HEADPHONES"
-              width={200}
-              height={200}
+              width={320}
+              height={320}
               className="object-contain"
             />
           </div>
@@ -90,7 +88,7 @@ export default function HeadphonesCategory() {
 
       {/* Product 3: XX59 HEADPHONES */}
       <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
           {/* Product Image */}
           <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
             <Image
@@ -104,13 +102,11 @@ export default function HeadphonesCategory() {
           
           {/* Product Content */}
           <div className="text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
               XX59 HEADPHONES
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Every year, educational programs are supported by many specific leaders across both 
-              healthcare and technology. The development of these new technologies is a leading 
-              step towards developing an innovative solution.
+            <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+              Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.
             </p>
             <Button 
               variant="primary" 
@@ -124,12 +120,12 @@ export default function HeadphonesCategory() {
 
       {/* Categories Navigation */}
       <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {/* Headphones Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40">
             <Link href="/category/headphones" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/images/homepage-headphone.png"
                     alt="Headphones"
@@ -139,12 +135,12 @@ export default function HeadphonesCategory() {
                   />
                 </div>
               </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">HEADPHONES</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-4 text-lg">HEADPHONES</h3>
+                <div className="text-gray-500 text-sm font-bold flex items-center justify-center gap-2 hover:text-orange-500 transition-colors mx-auto">
                   SHOP
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
                   </svg>
                 </div>
               </div>
@@ -152,10 +148,10 @@ export default function HeadphonesCategory() {
           </div>
           
           {/* Speakers Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40">
             <Link href="/category/speakers" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/images/homepage-speaker.png"
                     alt="Speakers"
@@ -165,12 +161,12 @@ export default function HeadphonesCategory() {
                   />
                 </div>
               </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">SPEAKERS</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-4 text-lg">SPEAKERS</h3>
+                <div className="text-gray-500 text-sm font-bold flex items-center justify-center gap-2 hover:text-orange-500 transition-colors mx-auto">
                   SHOP
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
                   </svg>
                 </div>
               </div>
@@ -178,10 +174,10 @@ export default function HeadphonesCategory() {
           </div>
           
           {/* Earphones Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
+          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40">
             <Link href="/category/earphones" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/images/homepage-earphone.png"
                     alt="Earphones"
@@ -191,12 +187,12 @@ export default function HeadphonesCategory() {
                   />
                 </div>
               </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">EARPHONES</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+                <h3 className="font-bold uppercase mb-4 text-lg">EARPHONES</h3>
+                <div className="text-gray-500 text-sm font-bold flex items-center justify-center gap-2 hover:text-orange-500 transition-colors mx-auto">
                   SHOP
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
                   </svg>
                 </div>
               </div>
@@ -205,25 +201,15 @@ export default function HeadphonesCategory() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
-          {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/Bitmap-7.png"
-              alt="About Audiophile"
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Content Side */}
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
+      {/* About Section - Updated to match homepage */}
+      <section className="container mx-auto px-6 mb-16 md:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center">
+          {/* Content Side - Left on desktop, bottom on mobile */}
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-4 md:mb-6 leading-tight">
               Bringing you the <span className="text-orange-500">best</span> audio gear
             </h2>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-2xl mx-auto lg:mx-0">
               Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
               earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
               rooms available for you to browse and experience a wide range of our products. Stop by our store 
@@ -231,8 +217,22 @@ export default function HeadphonesCategory() {
               audio equipment.
             </p>
           </div>
+          
+          {/* Image Side - Right on desktop, top on mobile */}
+          <div className="bg-gray-100 rounded-lg h-64 md:h-80 w-full relative overflow-hidden order-1 lg:order-2">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
+
+      {/* Add Footer */}
+      <Footer />
     </div>
   )
 }
