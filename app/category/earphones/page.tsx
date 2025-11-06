@@ -1,5 +1,6 @@
 // app/category/earphones/page.tsx - Updated with images
 import { Header } from '../../../components/layout/header'
+import { Footer } from '../../../components/layout/footer'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -166,6 +167,9 @@ export default function EarphonesCategory() {
           </div>
         </div>
       </section>
+
+      {/* Add Footer */}
+      <Footer />
     </div>
   )
 }

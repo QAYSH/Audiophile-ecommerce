@@ -1,19 +1,37 @@
-// app/product/xx59-headphones/page.tsx - Updated with images
+// app/product/xx59-headphones/page.tsx - Updated with working Add to Cart and footer
+'use client';
+
 import { Header } from '../../../components/layout/header'
+import { Footer } from '../../../components/layout/footer'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
+import { useState } from 'react'
+import { useCart } from '../../../lib/cart-context'
 import Image from 'next/image'
 
 export default function ProductDetail3() {
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: 'xx59-headphones',
+      name: 'XX59 HEADPHONES',
+      price: 899,
+      quantity: quantity,
+      image: '/images/headphone3.png'
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
       {/* Back Button */}
       <section className="container mx-auto px-6 py-8">
-        <button className="text-gray-500 hover:text-black transition-colors">
+        <Link href="/category/headphones" className="text-gray-500 hover:text-black transition-colors inline-flex items-center">
           ← Go Back
-        </button>
+        </Link>
       </section>
 
       {/* Product Main Section */}
@@ -40,15 +58,25 @@ export default function ProductDetail3() {
               and we have a strong experience in your life and culture.
             </p>
             <div className="text-lg font-bold mb-8">
-              $ 1.9.19
+              $ 899
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center border border-gray-300 rounded">
-                <button className="px-4 py-2 text-gray-500 hover:text-black">-</button>
-                <span className="px-4 py-2">1</span>
-                <button className="px-4 py-2 text-gray-500 hover:text-black">+</button>
+                <button 
+                  className="px-4 py-2 text-gray-500 hover:text-black"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                >
+                  -
+                </button>
+                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+                <button 
+                  className="px-4 py-2 text-gray-500 hover:text-black"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  +
+                </button>
               </div>
-              <Button variant="primary">
+              <Button variant="primary" onClick={handleAddToCart}>
                 ADD TO CART
               </Button>
             </div>
@@ -147,7 +175,7 @@ export default function ProductDetail3() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK II</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/xx99-mark-ii-headphones" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -164,7 +192,7 @@ export default function ProductDetail3() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK I</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/xx99-mark-i-headphones" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -181,7 +209,7 @@ export default function ProductDetail3() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX9 SPEAKER</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/zx9-speaker" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -292,6 +320,9 @@ export default function ProductDetail3() {
           </div>
         </div>
       </section>
+
+      {/* Add Footer */}
+      <Footer />
     </div>
   )
 }

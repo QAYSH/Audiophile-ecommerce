@@ -78,8 +78,8 @@ export default function HeadphonesCategory() {
             <Image
               src="/images/homepage-headphone.png"
               alt="XX99 MARK I HEADPHONES"
-              width={320}
-              height={320}
+              width={250}
+              height={250}
               className="object-contain"
             />
           </div>
@@ -129,8 +129,8 @@ export default function HeadphonesCategory() {
                   <Image
                     src="/images/homepage-headphone.png"
                     alt="Headphones"
-                    width={80}
-                    height={80}
+                    width={50}
+                    height={50}
                     className="object-cover"
                   />
                 </div>

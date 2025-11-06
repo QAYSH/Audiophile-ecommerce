@@ -1,19 +1,37 @@
 // app/product/xx99-mark-i-headphones/page.tsx - Updated with images
+'use client';
+
 import { Header } from '../../../components/layout/header'
+import { Footer } from '../../../components/layout/footer'
 import { Button } from '../../../components/ui/button'
 import Link from 'next/link'
+import { useState } from 'react'
+import { useCart } from '../../../lib/cart-context'
 import Image from 'next/image'
 
 export default function ProductDetail2() {
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: 'xx99-mark-i-headphones',
+      name: 'XX99 MARK I HEADPHONES',
+      price: 1750,
+      quantity: quantity,
+      image: '/images/homepage-headphone.png'
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
       {/* Back Button */}
       <section className="container mx-auto px-6 py-8">
-        <button className="text-gray-500 hover:text-black transition-colors">
+        <Link href="/category/headphones" className="text-gray-500 hover:text-black transition-colors inline-flex items-center">
           ← Go Back
-        </button>
+        </Link>
       </section>
 
       {/* Product Main Section */}
@@ -41,15 +59,25 @@ export default function ProductDetail2() {
               radiators that they go.
             </p>
             <div className="text-lg font-bold mb-8">
-              $ 4 LYSI
+              $ 1,750
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center border border-gray-300 rounded">
-                <button className="px-4 py-2 text-gray-500 hover:text-black">-</button>
-                <span className="px-4 py-2">1</span>
-                <button className="px-4 py-2 text-gray-500 hover:text-black">+</button>
+                <button 
+                  className="px-4 py-2 text-gray-500 hover:text-black"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                >
+                  -
+                </button>
+                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+                <button 
+                  className="px-4 py-2 text-gray-500 hover:text-black"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  +
+                </button>
               </div>
-              <Button variant="primary">
+              <Button variant="primary" onClick={handleAddToCart}>
                 ADD TO CART
               </Button>
             </div>
@@ -156,7 +184,7 @@ export default function ProductDetail2() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK II</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/xx99-mark-ii-headphones" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -173,7 +201,7 @@ export default function ProductDetail2() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">XX99</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/xx59-headphones" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -190,7 +218,7 @@ export default function ProductDetail2() {
               />
             </div>
             <h3 className="text-xl font-bold uppercase mb-4">ZX9 SPEAKER</h3>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" href="/product/zx9-speaker" className="w-full">
               SEE PRODUCT
             </Button>
           </div>
@@ -301,6 +329,9 @@ export default function ProductDetail2() {
           </div>
         </div>
       </section>
+
+      {/* Add Footer */}
+      <Footer />
     </div>
   )
 }
