@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       
       {/* Hero Section - Text aligned left on desktop, center on mobile */}
-      <section className="relative bg-black text-white h-[500px] md:h-[600px] flex items-center">
+      <section className="relative bg-black text-white h-[600px] md:h-[700px] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
           <Image
@@ -32,7 +32,7 @@ export default function Home() {
               XX99 Mark II<br />Headphones
             </h1>
             <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
-              Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
+              Experience natural, lifelike audio and exceptional build quality made for the passionate music<br/> enthusiast.
             </p>
             <Button 
               variant="primary" 
@@ -214,34 +214,33 @@ export default function Home() {
       </section>
 
       {/* About Section - Fixed for mobile */}
-      <section className="container mx-auto px-6 mb-16 md:mb-24">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center">
-    {/* Content Side - Left on desktop, bottom on mobile */}
-    <div className="text-center lg:text-left order-2 lg:order-1">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-6 md:mb-8 leading-tight">
-        Bringing you the <span className="text-orange-500">best</span> audio gear
-      </h2>
-      <p className="text-gray-600 leading-relaxed text-base md:text-lg max-w-2xl mx-auto lg:mx-0">
-        Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
-        earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
-        rooms available for you to browse and experience a wide range of our products. Stop by our store 
-        to meet some of the fantastic people who make Audiophile the best place to buy your portable 
-        audio equipment.
-      </p>
-    </div>
-    
-    {/* Image Side - Right on desktop, top on mobile */}
-    <div className="bg-gray-100 rounded-lg h-80 md:h-96 w-full relative overflow-hidden order-1 lg:order-2">
-      <Image
-        src="/images/Bitmap-7.png"
-        alt="About Audiophile"
-        fill
-        className="object-cover"
-        priority
-      />
-    </div>
-  </div>
-</section>
+      <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+          {/* Image Side */}
+          <div className="bg-gray-100 rounded-lg h-64 md:h-96 relative overflow-hidden order-2 md:order-1">
+            <Image
+              src="/images/Bitmap-7.png"
+              alt="About Audiophile"
+              fill
+              className="object-cover"
+            />
+          </div>
+          
+          {/* Content Side */}
+          <div className="order-1 md:order-2 text-center md:text-left">
+            <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
+              Bringing you the <span className="text-orange-500">best</span> audio gear
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+              Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
+              earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
+              rooms available for you to browse and experience a wide range of our products. Stop by our store 
+              to meet some of the fantastic people who make Audiophile the best place to buy your portable 
+              audio equipment.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Add Footer */}
       <Footer />
