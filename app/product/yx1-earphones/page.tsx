@@ -3,6 +3,7 @@
 
 import { Header } from '../../../components/layout/header';
 import { Button } from '../../../components/ui/button';
+import { Footer } from '../../../components/layout/footer'
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '../../../lib/cart-context';
@@ -326,6 +327,8 @@ export default function YX1Earphones() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
+    
   );
 }
