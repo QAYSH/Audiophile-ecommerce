@@ -11,61 +11,75 @@ export default function Home() {
       <Header />
       
       {/* Hero Section - Text aligned left on desktop, center on mobile */}
-      <section className="relative bg-black text-white h-[600px] md:h-[700px] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
-          <Image
-            src="/images/Bitmap-1.png"
-            alt="XX99 Mark II Headphones"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-md text-center md:text-left">
-            <span className="text-gray-400 text-sm uppercase tracking-[10px] mb-4 block">
-              New Product
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-6 leading-tight">
-              XX99 Mark II<br />Headphones
-            </h1>
-            <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
-              Experience natural, lifelike audio and exceptional build quality made for the passionate music<br/> enthusiast.
-            </p>
-            <Button 
-              variant="primary" 
-              href="/product/xx99-mark-ii-headphones"
-              className="w-full md:w-auto"
-            >
-              See Product
-            </Button>
-          </div>
-        </div>
-      </section>
+      <section className="relative bg-black text-white h-[600px] flex items-center">
+  {/* Mobile Background */}
+  <div className="md:hidden absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
+    <Image
+      src="/images/Bitmap-4.png"
+      alt="XX99 Mark II Headphones"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+  
+  {/* Desktop Background */}
+  <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
+    <Image
+      src="/images/Bitmap-1.png"
+      alt="XX99 Mark II Headphones"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+  
+  <div className="container mx-auto px-6 relative z-10">
+    <div className="max-w-md text-center md:text-left">
+      <span className="text-gray-400 text-sm uppercase tracking-[10px] mb-4 block">
+        New Product
+      </span>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-6 leading-tight">
+        XX99 Mark II<br />Headphones
+      </h1>
+      <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
+        Experience natural, lifelike audio and exceptional build quality made for the passionate music<br/> enthusiast.
+      </p>
+      <Button 
+        variant="primary" 
+        href="/product/xx99-mark-ii-headphones"
+        className="w-full md:w-auto"
+      >
+        See Product
+      </Button>
+    </div>
+  </div>
+</section>
 
       {/* Categories Navigation - Fixed for mobile */}
-      {/* Categories Navigation - Pixel Perfect Design */}
-<section className="container mx-auto px-6 py-16 md:py-24">
-  <div className="max-w-[1110px] mx-auto">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+{/* Categories Navigation - Pixel Perfect Design */}
+<section className="container mx-auto px-6 py-16 md:py-24 mt-[50px] h-[500px]">
+  <div className="max-w-[1110px] mx-auto h-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] h-full">
       {/* Headphones Card */}
-      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[220px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/headphones" className="block h-full w-full">
-          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
-            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
-              <Image
-                src="/images/homepage-headphone.png"
-                alt="Headphones"
-                width={120}
-                height={120}
-                className="object-contain drop-shadow-2xl"
-              />
+          <div className="absolute -top-[60px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[140px] h-[140px] flex items-center justify-center overflow-hidden">
+              <div className="relative">
+                <div className="absolute -bottom-[10px] left-1/2 transform -translate-x-1/2 w-[120px] h-[20px] bg-gray-300 rounded-full blur-sm opacity-70"></div>
+                <Image
+                  src="/images/homepage-headphone.png"
+                  alt="Headphones"
+                  width={100}
+                  height={100}
+                  className="object-contain relative z-10"
+                />
+              </div>
             </div>
           </div>
-          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Headphones</h3>
+          <div className="absolute bottom-[30px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[12px] text-[16px] leading-[22px] tracking-[1.29px]">Headphones</h3>
             <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
               SHOP
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -77,21 +91,24 @@ export default function Home() {
       </div>
       
       {/* Speakers Card */}
-      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[220px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/speakers" className="block h-full w-full">
-          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
-            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
-              <Image
-                src="/images/homepage-speaker.png"
-                alt="Speakers"
-                width={120}
-                height={120}
-                className="object-contain drop-shadow-2xl"
-              />
+          <div className="absolute -top-[60px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[140px] h-[140px] flex items-center justify-center overflow-hidden">
+              <div className="relative">
+                <div className="absolute -bottom-[8px] left-1/2 transform -translate-x-1/2 w-[120px] h-[20px] bg-gray-300 rounded-full blur-sm opacity-60"></div>
+                <Image
+                  src="/images/homepage-speaker.png"
+                  alt="Speakers"
+                  width={120}
+                  height={120}
+                  className="object-contain relative z-10"
+                />
+              </div>
             </div>
           </div>
-          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Speakers</h3>
+          <div className="absolute bottom-[30px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[12px] text-[16px] leading-[22px] tracking-[1.29px]">Speakers</h3>
             <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
               SHOP
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -103,21 +120,24 @@ export default function Home() {
       </div>
       
       {/* Earphones Card */}
-      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[220px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/earphones" className="block h-full w-full">
-          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
-            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
-              <Image
-                src="/images/homepage-earphone.png"
-                alt="Earphones"
-                width={120}
-                height={120}
-                className="object-contain drop-shadow-2xl"
-              />
+          <div className="absolute -top-[60px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[140px] h-[140px] flex items-center justify-center overflow-hidden">
+              <div className="relative">
+                <div className="absolute -bottom-[8px] left-1/2 transform -translate-x-1/2 w-[120px] h-[20px] bg-gray-300 rounded-full blur-sm opacity-60"></div>
+                <Image
+                  src="/images/homepage-earphone.png"
+                  alt="Earphones"
+                  width={120}
+                  height={120}
+                  className="object-contain relative z-10"
+                />
+              </div>
             </div>
           </div>
-          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Earphones</h3>
+          <div className="absolute bottom-[30px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[12px] text-[16px] leading-[22px] tracking-[1.29px]">Earphones</h3>
             <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
               SHOP
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
