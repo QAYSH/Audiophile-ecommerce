@@ -13,8 +13,8 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-black text-white">
-        <div className="container mx-auto px-6 py-8">
+      <header className="bg-black text-white border-b border-gray-700">
+        <div className="max-w-[1110px] mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             {/* Hamburger Menu for Mobile */}
             <button 

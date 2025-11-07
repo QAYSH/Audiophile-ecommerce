@@ -10,8 +10,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section - Text aligned left on desktop, center on mobile */}
-      <section className="relative bg-black text-white h-[600px] flex items-center">
+{/* Hero Section - Text aligned left on desktop, center on mobile */}
+<section className="relative bg-black text-white h-[600px] flex items-center">
   {/* Mobile Background */}
   <div className="md:hidden absolute inset-0 bg-gradient-to-b from-gray-900 to-black opacity-90">
     <Image
@@ -34,8 +34,8 @@ export default function Home() {
     />
   </div>
   
-  <div className="container mx-auto px-6 relative z-10">
-    <div className="max-w-md text-center md:text-left">
+  <div className="max-w-[1110px] mx-auto px-6 relative z-10 w-full">
+    <div className="max-w-[300px] h-[290] md:max-w-md mx-auto md:mx-0 text-center md:text-left">
       <span className="text-gray-400 text-sm uppercase tracking-[10px] mb-4 block">
         New Product
       </span>
@@ -56,10 +56,10 @@ export default function Home() {
   </div>
 </section>
 
- {/* Categories Navigation - Fixed for mobile */}
-<section className="container mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
-  <div className="max-w-[1110px] mx-auto h-full">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[20px] md:gap-[30px] h-full">
+{/* Categories Navigation - Fixed for mobile */}
+<section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
+  <div className="h-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[80px] md:gap-[30px] h-full">
       {/* Headphones Card */}
       <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[250px] md:h-[280px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/headphones" className="block h-full w-full">
