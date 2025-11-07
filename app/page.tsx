@@ -188,8 +188,8 @@ export default function Home() {
 </section>
 
 {/* ZX7 Speaker Section - Fixed for mobile */}
-<section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16 mt-8 md:mt-16">
-  <div className="bg-gray-100 rounded-lg h-64 md:h-80 relative">
+<section className="max-w-[1110px] mx-auto px-4 sm:px-6 mb-12 md:mb-16 mt-8 md:mt-16">
+  <div className="bg-gray-100 rounded-lg h-[320px] relative">
     {/* Background Image */}
     <div className="absolute inset-0 rounded-lg overflow-hidden">
       <Image
@@ -200,7 +200,7 @@ export default function Home() {
       />
     </div>
     
-    <div className="absolute left-4 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2">
+    <div className="absolute left-[165px] top-1/2 transform -translate-y-1/2">
       <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 md:mb-6">ZX7 SPEAKER</h2>
       <Button 
         variant="transparent" 
@@ -214,60 +214,60 @@ export default function Home() {
 </section>
 
       {/* YX1 Earphones Section - Fixed for mobile */}
-      <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-80 relative overflow-hidden">
-            <Image
-              src="/images/Bitmap-6.png"
-              alt="YX1 Earphones"
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Content Side */}
-          <div className="bg-gray-50 rounded-lg p-6 md:p-12 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 md:mb-6">YX1 EARPHONES</h2>
-            <Button 
-              variant="transparent" 
-              href="/product/yx1-earphones"
-              className="w-full md:w-auto text-sm"
-            >
-              See Product
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="max-w-[1110px] mx-auto px-4 sm:px-6 mb-12 md:mb-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    {/* Image Side */}
+    <div className="bg-gray-100 rounded-lg h-64 md:h-80 relative overflow-hidden">
+      <Image
+        src="/images/Bitmap-6.png"
+        alt="YX1 Earphones"
+        fill
+        className="object-cover"
+      />
+    </div>
+    
+    {/* Content Side */}
+    <div className="bg-gray-100 rounded-lg h-64 md:h-80 p-6 md:p-12 flex flex-col justify-center">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 md:mb-6">YX1 EARPHONES</h2>
+      <Button 
+        variant="transparent" 
+        href="/product/yx1-earphones"
+        className="w-full md:w-auto text-sm"
+      >
+        See Product
+      </Button>
+    </div>
+  </div>
+</section>
 
-      {/* About Section - Fixed for mobile */}
-      <section className="container mx-auto px-4 sm:px-6 mb-12 md:mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
-          {/* Image Side */}
-          <div className="bg-gray-100 rounded-lg h-64 md:h-96 relative overflow-hidden order-2 md:order-1">
-            <Image
-              src="/images/Bitmap-7.png"
-              alt="About Audiophile"
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Content Side */}
-          <div className="order-1 md:order-2 text-center md:text-left">
-            <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
-              Bringing you the <span className="text-orange-500">best</span> audio gear
-            </h2>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
-              earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
-              rooms available for you to browse and experience a wide range of our products. Stop by our store 
-              to meet some of the fantastic people who make Audiophile the best place to buy your portable 
-              audio equipment.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* About Section - Fixed for mobile */}
+<section className="max-w-[1110px] mx-auto px-4 sm:px-6 mb-12 md:mb-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+    {/* Content Side - Left on desktop, top on mobile */}
+    <div className="text-center md:text-left order-1 md:order-1 h-[295px] w-full md:w-[445px] flex flex-col justify-center">
+      <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
+        Bringing you the <br/> <span className="text-orange-500">best</span> audio gear
+      </h2>
+      <p className="text-gray-400 leading-relaxed text-xs md:text-sm">
+        Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
+        earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
+        rooms available for you to browse and experience a wide range of our products. Stop by our store 
+        to meet some of the fantastic people who make Audiophile the best place to buy your portable 
+        audio equipment.
+      </p>
+    </div>
+    
+    {/* Image Side - Right on desktop, bottom on mobile */}
+    <div className="bg-gray-100 rounded-lg h-[300px] md:h-[570px] md:w-[500px] relative overflow-hidden order-2 md:order-2">
+      <Image
+        src="/images/Bitmap-7.png"
+        alt="About Audiophile"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Add Footer */}
       <Footer />
