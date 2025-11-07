@@ -45,7 +45,7 @@ export default function SpeakersCategory() {
       </p>
       <Button 
   variant="primary" 
-  href="/product/yx1-earphones"
+  href="/product/zx9-speaker"
   className="w-[160px] h-[50px] mx-auto md:mx-0 flex items-center justify-center whitespace-nowrap"
 >
   SEE PRODUCT
@@ -69,12 +69,13 @@ export default function SpeakersCategory() {
       </p>
       <Button 
   variant="primary" 
-  href="/product/yx1-earphones"
+  href="/product/zx7-speaker"
   className="w-[160px] h-[50px] mx-auto md:mx-0 flex items-center justify-center whitespace-nowrap"
 >
   SEE PRODUCT
 </Button>
     </div>
+
     
     {/* Product Image */}
     <div className="bg-gray-100 rounded-lg h-80 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden order-1 md:order-2">

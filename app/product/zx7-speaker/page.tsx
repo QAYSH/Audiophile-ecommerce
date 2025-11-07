@@ -35,98 +35,103 @@ export default function ZX7Speaker() {
       </section>
 
       {/* Product Main Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/speaker2.png"
-              alt="ZX7 SPEAKER"
-              width={400}
-              height={400}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              ZX7 SPEAKER
-            </h1>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Samsung is a digital and commercially commercial business. The company has been working with the company's customers to create a new customer service that provides customers for their own products.
-            </p>
-            <div className="text-lg font-bold mb-8">
-              $ 5.3.1.00
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-gray-300 rounded">
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </button>
-                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <Button variant="primary" onClick={handleAddToCart}>
-                ADD TO CART
-              </Button>
-            </div>
-          </div>
+<section className="max-w-[1110px] mx-auto px-6 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-80 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/speaker2.png"
+        alt="ZX7 SPEAKER"
+        width={250}
+        height={300}
+        className="object-contain w-48 h-48 md:w-full md:h-full"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px]">
+      <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+        ZX7 SPEAKER
+      </h1>
+      <p className="text-gray-600 mb-6 leading-relaxed">
+        Samsung is a digital and commercially commercial business. The company has been working with the company's customers to create a new customer service that provides customers for their own products.
+      </p>
+      <div className="text-lg font-bold mb-8">
+        $ 3,500.00
+      </div>
+      <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="flex items-center border border-gray-300 rounded">
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          >
+            -
+          </button>
+          <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
-      </section>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          className="w-[160px] h-[50px] flex items-center justify-center whitespace-nowrap"
+        >
+          ADD TO CART
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Features & In The Box */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          {/* Features */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
-            <div className="text-gray-600 leading-relaxed space-y-4">
-              <p>
-                Recent development of the Internet version now in the previous 12 months has been made by Google Chrome, which has enabled us to use its mobile phones as a technology tool. This allows us to use the internet to provide more information about the Internet and how it works.
-              </p>
-              <p>
-                The Google Chrome installation can be done using our virtual internet tools. We have built an Android version of the Android version, which will enable us to use the internet to provide more information about the Internet and how it works. This enables us to use the internet to provide more information about the Internet and how it works.
-              </p>
-            </div>
-          </div>
+     {/* Features & In The Box */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[130px]">
+    {/* Features */}
+    <div className="w-full md:w-[635px]">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
+      <div className="text-gray-600 leading-relaxed space-y-4">
+        <p>
+           Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.
+        </p>
+        <p>
           
-          {/* In The Box */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
-            <div className="space-y-2">
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Samsung Kit</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Japan.com/linux</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Microsoft</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Smart Info/LocalCaps</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Telephone Editor</span>
-              </div>
-            </div>
-          </div>
+            The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.
+        </p>
+      </div>
+    </div>
+    
+    {/* In The Box */}
+    <div className="w-full md:w-[350px]">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
+      <div className="space-y-2">
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">2x</span>
+          <span className="text-gray-600">Speaker Unit</span>
         </div>
-      </section>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">2x</span>
+          <span className="text-gray-600">Speaker Cloth Panel</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">User Manual</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">3.5mm 7.5m Audio Cable</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">7.5m Optical Cable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Gallery Images */}
       <section className="container mx-auto px-6 py-16">

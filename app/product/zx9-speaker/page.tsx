@@ -35,53 +35,57 @@ export default function ZX9Speaker() {
       </section>
 
       {/* Product Main Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/homepage-speaker.png"
-              alt="ZX9 SPEAKER"
-              width={400}
-              height={400}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              ZX9 SPEAKER
-            </h1>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Genesis can be used for safety, maintenance, and safety. The reader follows specific global needs (e.g., firewall, firewall, or other firewall) to ensure that the environment is safe. In particular, a special event occurs in the day of the event beforehand during day 30-31st (2024).
-            </p>
-            <div className="text-lg font-bold mb-8">
-              $ 4,500
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-gray-300 rounded">
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </button>
-                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <Button variant="primary" onClick={handleAddToCart}>
-                ADD TO CART
-              </Button>
-            </div>
-          </div>
+<section className="max-w-[1110px] mx-auto px-6 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-96 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/speaker-26.png"
+        alt="ZX9 SPEAKER"
+        width={290}
+        height={350}
+        className="object-contain"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px]">
+      <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+        ZX9 SPEAKER
+      </h1>
+      <p className="text-gray-600 mb-6 leading-relaxed">
+        Genesis can be used for safety, maintenance, and safety. The reader follows specific global needs (e.g., firewall, firewall, or other firewall) to ensure that the environment is safe. In particular, a special event occurs in the day of the event beforehand during day 30-31st (2024).
+      </p>
+      <div className="text-lg font-bold mb-8">
+        $ 4,500
+      </div>
+      <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="flex items-center border border-gray-300 rounded">
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          >
+            -
+          </button>
+          <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
-      </section>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          className="w-[160px] h-[50px] flex items-center justify-center whitespace-nowrap"
+        >
+          ADD TO CART
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Features & In The Box */}
       <section className="container mx-auto px-6 py-16">
