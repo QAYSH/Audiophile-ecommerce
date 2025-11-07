@@ -200,16 +200,16 @@ export default function Home() {
       />
     </div>
     
-    <div className="absolute left-[165px] top-1/2 transform -translate-y-1/2">
-      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 md:mb-6">ZX7 SPEAKER</h2>
-      <Button 
-        variant="transparent" 
-        href="/product/zx7-speaker"
-        className="w-full md:w-auto text-sm"
-      >
-        See Product
-      </Button>
-    </div>
+    <div className="absolute left-[48px] md:left-[165px] top-1/2 transform -translate-y-1/2">
+  <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 md:mb-6">ZX7 SPEAKER</h2>
+  <Button 
+    variant="transparent" 
+    href="/product/zx7-speaker"
+    className="w-full md:w-auto text-sm"
+  >
+    See Product
+  </Button>
+</div>
   </div>
 </section>
 
@@ -244,7 +244,7 @@ export default function Home() {
 <section className="max-w-[1110px] mx-auto px-4 sm:px-6 mb-12 md:mb-16">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
     {/* Content Side - Left on desktop, top on mobile */}
-    <div className="text-center md:text-left order-1 md:order-1 h-[295px] w-full md:w-[445px] flex flex-col justify-center">
+    <div className="text-center md:text-left order-2 md:order-1 h-[295px] w-full md:w-[445px] flex flex-col justify-center">
       <h2 className="text-2xl md:text-4xl font-bold uppercase mb-6 md:mb-8 leading-tight">
         Bringing you the <br/> <span className="text-orange-500">best</span> audio gear
       </h2>
@@ -258,7 +258,7 @@ export default function Home() {
     </div>
     
     {/* Image Side - Right on desktop, bottom on mobile */}
-    <div className="bg-gray-100 rounded-lg h-[300px] md:h-[570px] md:w-[500px] relative overflow-hidden order-2 md:order-2">
+    <div className="bg-gray-100 rounded-lg h-[300px] md:h-[570px] md:w-[500px] relative overflow-hidden order-1 md:order-2">
       <Image
         src="/images/Bitmap-7.png"
         alt="About Audiophile"
