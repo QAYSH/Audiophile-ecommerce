@@ -46,87 +46,91 @@ export default function Home() {
       </section>
 
       {/* Categories Navigation - Fixed for mobile */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {/* Headphones Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
-            <Link href="/category/headphones" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/images/homepage-headphone.png"
-                    alt="Headphones"
-                    width={50}
-                    height={50}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">Headphones</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
-                  Shop
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-              </div>
-            </Link>
+      {/* Categories Navigation - Pixel Perfect Design */}
+<section className="container mx-auto px-6 py-16 md:py-24">
+  <div className="max-w-[1110px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+      {/* Headphones Card */}
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+        <Link href="/category/headphones" className="block h-full w-full">
+          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/homepage-headphone.png"
+                alt="Headphones"
+                width={120}
+                height={120}
+                className="object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
-          
-          {/* Speakers Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
-            <Link href="/category/speakers" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/images/homepage-speaker.png"
-                    alt="Speakers"
-                    width={50}
-                    height={50}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">Speakers</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
-                  Shop
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-              </div>
-            </Link>
+          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Headphones</h3>
+            <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
+              SHOP
+              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
+              </svg>
+            </div>
           </div>
-          
-          {/* Earphones Card */}
-          <div className="bg-gray-100 rounded-lg relative cursor-pointer h-40 md:h-48">
-            <Link href="/category/earphones" className="block h-full">
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/images/homepage-earphone.png"
-                    alt="Earphones"
-                    width={50}
-                    height={50}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-                <h3 className="font-bold uppercase mb-2 text-sm md:text-base">Earphones</h3>
-                <div className="text-gray-500 text-xs md:text-sm font-bold flex items-center justify-center gap-1 md:gap-2 hover:text-orange-500 transition-colors mx-auto">
-                  Shop
-                  <svg width="6" height="10" className="md:w-2 md:h-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-              </div>
-            </Link>
+        </Link>
+      </div>
+      
+      {/* Speakers Card */}
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+        <Link href="/category/speakers" className="block h-full w-full">
+          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/homepage-speaker.png"
+                alt="Speakers"
+                width={120}
+                height={120}
+                className="object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Speakers</h3>
+            <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
+              SHOP
+              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
+              </svg>
+            </div>
+          </div>
+        </Link>
+      </div>
+      
+      {/* Earphones Card */}
+      <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[284px] shadow-xl hover:shadow-2xl transition-all duration-300">
+        <Link href="/category/earphones" className="block h-full w-full">
+          <div className="absolute -top-[90px] left-1/2 transform -translate-x-1/2">
+            <div className="w-[180px] h-[180px] flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/homepage-earphone.png"
+                alt="Earphones"
+                width={120}
+                height={120}
+                className="object-contain drop-shadow-2xl"
+              />
+            </div>
+          </div>
+          <div className="absolute bottom-[55px] left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <h3 className="font-bold uppercase mb-[17px] text-[18px] leading-[25px] tracking-[1.29px]">Earphones</h3>
+            <div className="text-gray-500 text-[13px] font-bold flex items-center justify-center gap-[13px] hover:text-orange-500 transition-colors mx-auto tracking-wider">
+              SHOP
+              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.322 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none"/>
+              </svg>
+            </div>
+          </div>
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+      
 
       {/* ZX9 Speaker Section - Fixed for mobile */}
       <section className="bg-orange-500 rounded-lg overflow-hidden mx-4 sm:mx-6 mb-12 md:mb-16">
