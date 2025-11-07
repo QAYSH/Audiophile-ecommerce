@@ -20,71 +20,73 @@ export default function HeadphonesCategory() {
       </section>
 
       {/* Product 1: XX99 MARK II HEADPHONES */}
-      <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/headphone2.png"
-              alt="XX99 MARK II HEADPHONES"
-              width={320}
-              height={320}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
-              New Product
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
-              XX99 MARK II HEADPHONES
-            </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
-              The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.
-            </p>
-            <Button 
-              variant="primary" 
-              href="/product/xx99-mark-ii-headphones"
-            >
-              SEE PRODUCT
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="max-w-[1110px] mx-auto px-6 py-16 md:py-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[120px] items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-80 md:h-[530px] md:w-[470px] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/headphone2.png"
+        alt="XX99 MARK II HEADPHONES"
+        width={320}
+        height={320}
+        className="object-contain md:w-full md:h-full"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px] md:h-[343px] flex flex-col justify-center">
+      <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
+        New Product
+      </span>
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
+        XX99 MARK II <br/> HEADPHONES
+      </h2>
+      <p className="text-gray-400 mb-8 leading-relaxed text-xs md:text-sm">
+        The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.
+      </p>
+      <Button 
+        variant="primary" 
+        href="/product/xx99-mark-ii-headphones"
+       
+      >
+        SEE PRODUCT
+      </Button>
+    </div>
+  </div>
+</section>
 
       {/* Product 2: XX99 MARK I HEADPHONES */}
-      <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
-          {/* Product Content - Order reversed on desktop */}
-          <div className="text-center md:text-left order-2 md:order-1">
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
-              XX99 MARK I HEADPHONES
-            </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
-              As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.
-            </p>
-            <Button 
-              variant="primary" 
-              href="/product/xx99-mark-i-headphones"
-            >
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center relative overflow-hidden order-1 md:order-2">
-            <Image
-              src="/images/homepage-headphone.png"
-              alt="XX99 MARK I HEADPHONES"
-              width={250}
-              height={250}
-              className="object-contain"
-            />
-          </div>
-        </div>
-      </section>
+<section className="max-w-[1110px] mx-auto px-6 py-16 md:py-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[130px] items-center">
+    {/* Product Content - Order reversed on desktop */}
+    <div className="text-center md:text-left order-2 md:order-1 w-full md:w-[445px] md:h-[343px] flex flex-col justify-center">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
+        XX99 MARK I HEADPHONES
+      </h2>
+      <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+        As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.
+      </p>
+      <Button 
+        variant="primary" 
+        href="/product/xx99-mark-i-headphones"
+        className="w-[160px] h-[68px] mx-auto md:mx-0"
+      >
+        SEE PRODUCT
+      </Button>
+    </div>
+    
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-80 md:h-[530px] md:w-[470px] flex items-center justify-center relative overflow-hidden order-1 md:order-2">
+      <Image
+        src="/images/headphone-27.png"
+        alt="XX99 MARK I HEADPHONES"
+        width={320}
+        height={320}
+        className="object-contain md:w-full md:h-full"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Product 3: XX59 HEADPHONES */}
       <section className="container mx-auto px-6 py-16 md:py-24">
@@ -94,8 +96,8 @@ export default function HeadphonesCategory() {
             <Image
               src="/images/headphone3.png"
               alt="XX59 HEADPHONES"
-              width={320}
-              height={320}
+              width={250}
+              height={250}
               className="object-contain"
             />
           </div>
@@ -118,10 +120,10 @@ export default function HeadphonesCategory() {
         </div>
       </section>
 
-            {/* Categories Navigation - Fixed for mobile */}
-<section className="container mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
-  <div className="max-w-[1110px] mx-auto h-full">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[20px] md:gap-[30px] h-full">
+          {/* Categories Navigation - Fixed for mobile */}
+<section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
+  <div className="h-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[80px] md:gap-[30px] h-full">
       {/* Headphones Card */}
       <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[250px] md:h-[280px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/headphones" className="block h-full w-full">

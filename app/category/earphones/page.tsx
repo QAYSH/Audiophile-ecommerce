@@ -56,10 +56,10 @@ export default function EarphonesCategory() {
         </div>
       </section>
 
-      {/* Categories Navigation - Fixed for mobile */}
-<section className="container mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
-  <div className="max-w-[1110px] mx-auto h-full">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[20px] md:gap-[30px] h-full">
+{/* Categories Navigation - Fixed for mobile */}
+<section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
+  <div className="h-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[80px] md:gap-[30px] h-full">
       {/* Headphones Card */}
       <div className="bg-gray-100 rounded-lg relative cursor-pointer h-[250px] md:h-[280px] shadow-xl hover:shadow-2xl transition-all duration-300">
         <Link href="/category/headphones" className="block h-full w-full">
