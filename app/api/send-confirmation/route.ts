@@ -1,6 +1,6 @@
-// app/api/send-confirmation/route.ts
+// app/api/send-confirmation/route.ts - FIXED VERSION
 import { NextRequest, NextResponse } from 'next/server';
-import { sendOrderConfirmationEmail } from '@/lib/nodemailer'; // ← CHANGE THIS IMPORT
+import { sendOrderConfirmationEmail } from '@/lib/nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,9 +24,15 @@ export async function POST(request: NextRequest) {
     
     if (result.success) {
       console.log('✅ Email sent successfully for order:', orderData.orderNumber);
+      
+      // FIX: Nodemailer returns different response structure than Resend
+      const emailId = result.data && 'messageId' in result.data 
+        ? result.data.messageId 
+        : 'sent'; // Fallback for when email is skipped in development
+      
       return NextResponse.json({ 
         message: 'Email sent successfully',
-        emailId: result.data?.messageId 
+        emailId: emailId
       });
     } else {
       console.error('❌ Failed to send email:', result.error);

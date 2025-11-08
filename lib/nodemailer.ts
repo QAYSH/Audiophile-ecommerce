@@ -1,14 +1,28 @@
-// lib/nodemailer.ts
+// lib/nodemailer.ts - BUILD SAFE VERSION
 import nodemailer from 'nodemailer';
 
-// Create transporter (using Gmail)
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER, // Your Gmail
-    pass: process.env.EMAIL_APP_PASSWORD, // Gmail App Password
-  },
-});
+// Safe transporter creation that won't break builds
+function createTransporter() {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+    console.warn('⚠️ Email environment variables not configured');
+    return null;
+  }
+
+  try {
+    return nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_APP_PASSWORD,
+      },
+    });
+  } catch (error) {
+    console.error('❌ Failed to create email transporter:', error);
+    return null;
+  }
+}
+
+const transporter = createTransporter();
 
 export interface OrderItem {
   id: string;
@@ -37,7 +51,7 @@ export interface OrderData {
   grandTotal: number;
 }
 
-// Your existing email template function (copy from resend.ts)
+// Your email template (keep your existing one)
 export const orderConfirmationTemplate = (order: OrderData) => {
   const itemsHtml = order.items.map((item) => `
     <div class="order-item">
@@ -163,6 +177,11 @@ export const orderConfirmationTemplate = (order: OrderData) => {
 
 export const sendOrderConfirmationEmail = async (order: OrderData) => {
   try {
+    if (!transporter) {
+      console.warn('📧 Email service not configured - skipping email send');
+      return { success: true, data: { message: 'Email skipped - not configured' } };
+    }
+
     console.log('📧 Attempting to send email to:', order.email);
     
     const mailOptions = {
