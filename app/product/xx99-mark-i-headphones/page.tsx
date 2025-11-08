@@ -34,196 +34,203 @@ export default function ProductDetail2() {
         </Link>
       </section>
 
-      {/* Product Main Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/homepage-headphone.png"
-              alt="XX99 MARK I HEADPHONES"
-              width={250}
-              height={250}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              XX99 MARK I HEADPHONES
-            </h1>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              As a significant driver for headphones, it is essential to get from some physical and 
-              environmental conditions within Android. It's not easy to see any personal events within 
-              radiators that they go.
+              {/* Product Main Section */}
+<section className="max-w-[1110px] mx-auto px-6 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-96 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden">
+      <Image
+         src="/images/headphone-27.png"
+         alt="XX99 MARK I HEADPHONES"
+        width={290}
+        height={350}
+        className="object-contain"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px]">
+      
+      <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+        XX99 MARK I HEADPHONES
+      </h1>
+     <p className="text-gray-400 mb-6 leading-relaxed">
+             As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. 
             </p>
-            <div className="text-lg font-bold mb-8">
-              $ 1,750
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-gray-300 rounded">
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </button>
-                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <Button variant="primary" onClick={handleAddToCart}>
-                ADD TO CART
-              </Button>
-            </div>
-          </div>
+      <div className="text-lg font-bold mb-8">
+        $ 1,750
+      </div>
+      <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="flex items-center border border-gray-300 rounded">
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          >
+            -
+          </button>
+          <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
-      </section>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          className="w-[160px] h-[50px] flex items-center justify-center whitespace-nowrap"
+        >
+          ADD TO CART
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Features & In The Box */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          {/* Features */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
-            <div className="text-gray-600 leading-relaxed space-y-4">
-              <p>
-                As an headphone, it allows us to make out people the ability to be tailored to take or
-                be used to use of our clients in order to help clients thrive together. This helps us
-                create more comfortable and accessible messages on your website to improve
-                outability as a pathway for support of this.
-              </p>
-              <p>
-                There are many local businesses who want to work with and collaborate in their
-                own, a network of entrepreneurs who can help us navigate these important areas by
-                making sure that there may only be a number of activities for community partners, such
-                as the LinkedIn and Facebook apps involved.
-              </p>
-            </div>
-          </div>
-          
-          {/* In The Box */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
-            <div className="space-y-2">
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Headphones</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Telephones</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Telephones Limited</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Smartphones</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Smartphones Global</span>
-              </div>
-            </div>
-          </div>
+       {/* Features & In The Box */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 md:h-[320px]">
+    {/* Features */}
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
+      <div className="text-gray-400 leading-relaxed space-y-4 text-xs ">
+        <p>
+         As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.
+        </p>
+        <p>
+          From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.
+        </p>
+      </div>
+    </div>
+    
+    
+    {/* In The Box */}
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
+      <div className="space-y-2 ">
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">Headphone Unit</span>
         </div>
-      </section>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">2x</span>
+          <span className="text-gray-600">Replacement Earcups</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">User Manual</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">3.5mm to RCA Cable</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Gallery Images */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-10.png"
-                alt="XX99 MARK I HEADPHONES Gallery 1"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-11.png"
-                alt="XX99 MARK I HEADPHONES Gallery 2"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="bg-gray-100 rounded-lg h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/Bitmap-12.png"
-              alt="XX99 MARK I HEADPHONES Gallery 3"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="space-y-4">
+      <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+        <Image
+          src="/images/Bitmap-11.png"
+          alt="XX99 MARK II HEADPHONES Gallery 1"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+        <Image
+          src="/images/Bitmap-12.png"
+          alt="XX99 MARK II HEADPHONES Gallery 2"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
+    <div className="bg-gray-100 rounded-lg h-64 md:h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/Bitmap-10.png"
+        alt="XX99 MARK II HEADPHONES Gallery 3"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+</section>
 
-      {/* You May Also Like */}
-      <section className="container mx-auto px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Product 1 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/homepage-headphone.png"
-                alt="XX99 MARK II"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK II</h3>
-            <Button variant="primary" href="/product/xx99-mark-ii-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 2 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/headphone3.png"
-                alt="XX99"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX99</h3>
-            <Button variant="primary" href="/product/xx59-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 3 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/homepage-speaker.png"
-                alt="ZX9 SPEAKER"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">ZX9 SPEAKER</h3>
-            <Button variant="primary" href="/product/zx9-speaker" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-        </div>
-      </section>
+{/* You May Also Like */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Product 1 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone2.png"
+          alt="zx7 speaker"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">XX99 Mark II</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx99-mark-ii-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 2 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone3.png"
+          alt="XX99 MARK I"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">xx59</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx59-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 3 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/speaker2.png"
+          alt="XX9 SPEAKER"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">zx7 speaker</h3>
+       <Button 
+            variant="primary" 
+            href="/product/zx7-speaker"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+  </div>
+</section>
 
 {/* Categories Navigation - Fixed for mobile */}
 <section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">

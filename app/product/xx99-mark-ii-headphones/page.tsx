@@ -34,199 +34,209 @@ export default function ProductDetail1() {
         </Link>
       </section>
 
-      {/* Product Main Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/headphone2.png"
-              alt="XX99 MARK II HEADPHONES"
-              width={400}
-              height={400}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
+        {/* Product Main Section */}
+<section className="max-w-[1110px] mx-auto px-6 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-96 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/headphone2.png"
+        alt="XX99 MARK II HEADPHONES"
+        width={290}
+        height={350}
+        className="object-contain"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px]">
+      <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
               New Product
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              XX99 MARK II HEADPHONES
-            </h1>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              The main purpose is to support the improvement of product value. A customer may experience 
-              a significant change in product quality and provide better performance on the daily basis and/or.
-            </p>
-            <div className="text-lg font-bold mb-8">
-              $ 2,999
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-gray-300 rounded">
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </button>
-                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <Button variant="primary" onClick={handleAddToCart}>
-                ADD TO CART
-              </Button>
-            </div>
-          </div>
+      <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+        XX99 MARK II HEADPHONES
+      </h1>
+      <p className="text-gray-400 mb-6 leading-relaxed">
+       The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.
+      </p>
+      <div className="text-lg font-bold mb-8">
+        $ 2,999
+      </div>
+      <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="flex items-center border border-gray-300 rounded">
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          >
+            -
+          </button>
+          <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
-      </section>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          className="w-[160px] h-[50px] flex items-center justify-center whitespace-nowrap"
+        >
+          ADD TO CART
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Features & In The Box */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          {/* Features */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
-            <div className="text-gray-600 leading-relaxed space-y-4">
-              <p>
-                Natural ingredients are used for all ingredients such as the Neckerbijlkool, dolphin,
-                sodium, etc., but not only allow the use of natural ingredients but also allow the use of
-                natural ingredients. The most important ingredient is the Cactus, which is one of the
-                most popular ingredients that can be used for all ingredients.
-              </p>
-              <p>
-                The traditional recipe involves the following: milk or chocolate (fried), soy sauce (mixed),
-                cookies or other ingredients. The recipes are based on the recipe's composition.
-                A nutritional recipe is made available at www.cactus.com.au. This recipe is designed to help you improve your
-                nutrition and improve your nutrition. It is recommended by the Food & Nutrition Service provider
-                which allows you to participate in all our online recipes.
-              </p>
-            </div>
-          </div>
-          
-          {/* In The Box */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
-            <div className="space-y-2">
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Headphones</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Equipment (optional)</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Water</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Smart Products (optional)</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Tuesdays</span>
-              </div>
-            </div>
-          </div>
+       {/* Features & In The Box */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 md:h-[320px]">
+    {/* Features */}
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
+      <div className="text-gray-400 leading-relaxed space-y-4 text-xs ">
+        <p>
+         Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.
+        </p>
+        <p>
+          The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.
+        </p>
+      </div>
+    </div>
+    
+    
+    {/* In The Box */}
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
+      <div className="space-y-2">
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">Headphone Unit</span>
         </div>
-      </section>
-
-      {/* Gallery Images */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-9.png"
-                alt="XX99 MARK II HEADPHONES Gallery 1"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-8.png"
-                alt="XX99 MARK II HEADPHONES Gallery 2"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="bg-gray-100 rounded-lg h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/Bitmap-7.png"
-              alt="XX99 MARK II HEADPHONES Gallery 3"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">2x</span>
+          <span className="text-gray-600">Replacement Earcups</span>
         </div>
-      </section>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">User Manual</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">3.5mm to RCA Cable</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">Power Cable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+     {/* Gallery Images */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="space-y-4">
+      <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+        <Image
+          src="/images/Bitmap-7.png"
+          alt="XX99 MARK II HEADPHONES Gallery 1"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+        <Image
+          src="/images/Bitmap-9.png"
+          alt="XX99 MARK II HEADPHONES Gallery 2"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
+    <div className="bg-gray-100 rounded-lg h-64 md:h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/Bitmap-8.png"
+        alt="XX99 MARK II HEADPHONES Gallery 3"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+</section>
+
+      
       {/* You May Also Like */}
-      <section className="container mx-auto px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Product 1 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/headphone2.png"
-                alt="XX99 MARK I"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK I</h3>
-            <Button variant="primary" href="/product/xx99-mark-i-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 2 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/headphone3.png"
-                alt="XX99"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX99</h3>
-            <Button variant="primary" href="/product/xx59-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 3 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/homepage-speaker.png"
-                alt="ZX9 SPEAKER"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">ZX9 SPEAKER</h3>
-            <Button variant="primary" href="/product/zx9-speaker" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Product 1 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone-27.png"
+          alt="zx7 speaker"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">XX99 Mark 1</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx99-mark-i-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 2 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone3.png"
+          alt="XX99 MARK I"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">xx59</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx59-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 3 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/speaker2.png"
+          alt="XX9 SPEAKER"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">zx7 speaker</h3>
+       <Button 
+            variant="primary" 
+            href="/product/zx7-speaker"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+  </div>
+</section>
 
      {/* Categories Navigation - Fixed for mobile */}
 <section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">

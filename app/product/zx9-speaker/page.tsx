@@ -50,6 +50,10 @@ export default function ZX9Speaker() {
     
     {/* Product Content */}
     <div className="text-center md:text-left w-full md:w-[445px]">
+      <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
+              New Product
+            </span>
+
       <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
         ZX9 SPEAKER
       </h1>

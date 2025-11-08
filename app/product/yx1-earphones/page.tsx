@@ -34,191 +34,176 @@ export default function YX1Earphones() {
         </Link>
       </section>
 
-      {/* Product Main Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/homepage-earphone.png"
-              alt="YX1 WIRELESS EARPHONES"
-              width={400}
-              height={400}
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Product Content */}
-          <div className="text-center md:text-left">
-            <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
+
+            {/* Product Main Section */}
+<section className="max-w-[1110px] mx-auto px-6 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+    {/* Product Image */}
+    <div className="bg-gray-100 rounded-lg h-96 md:h-[520px] md:w-[500px] flex items-center justify-center relative overflow-hidden">
+      <Image
+        src="/images/group-5.png"
+        alt="YX1 WIRELESS EARPHONES"
+        width={290}
+        height={350}
+        className="object-contain"
+      />
+    </div>
+    
+    {/* Product Content */}
+    <div className="text-center md:text-left w-full md:w-[445px]">
+      <span className="text-orange-500 text-sm uppercase tracking-[10px] mb-4 block">
               New Product
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-              YX1 WIRELESS EARPHONES
-            </h1>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Your your home's common and beautiful space drives your home with respect to everyone. Every member has a unique, well-known experience in the world to serve some specialised beauty.
-            </p>
-            <div className="text-lg font-bold mb-8">
-              $ 599
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-gray-300 rounded">
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </button>
-                <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                <button 
-                  className="px-4 py-2 text-gray-500 hover:text-black"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <Button variant="primary" onClick={handleAddToCart}>
-                ADD TO CART
-              </Button>
-            </div>
-          </div>
+      <h1 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+        YX1 WIRELESS EARPHONES
+      </h1>
+      <p className="text-gray-400 mb-6 leading-relaxed">
+        Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
+      </p>
+      <div className="text-lg font-bold mb-8">
+        $ 599
+      </div>
+      <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="flex items-center border border-gray-300 rounded">
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          >
+            -
+          </button>
+          <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
+          <button 
+            className="px-4 py-2 text-gray-500 hover:text-black"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
-      </section>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          className="w-[160px] h-[50px] flex items-center justify-center whitespace-nowrap"
+        >
+          ADD TO CART
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Features & In The Box */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          {/* Features */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
-            <div className="text-gray-600 leading-relaxed space-y-4">
-              <p>
-                Experience created across our China is a fantastic event of technology. With traditional people and employees, we are very fortunate to have an opportunity to improve their lives throughout our life as part of us. We encourage ourselves to enjoy long-term energy, exceptional social solutions and truly emotional events.
-              </p>
-              <p>
-                We recognise that happiness and creativity, increasing acceptance, thanks daily, and make sure we can be able to achieve this. This helps you create a new culture and help you nurture our own goals and joy. They ensure confidence and success will grow our commitment to all our people and families.
-              </p>
-            </div>
-          </div>
-          
-          {/* In The Box */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
-            <div className="space-y-2">
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">2x</span>
-                <span className="text-gray-600">Earphone Unit</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">6x</span>
-                <span className="text-gray-600">Multi-size Earplugs</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">User Manual</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">USB-C Charging Cable</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-orange-500 font-bold">1x</span>
-                <span className="text-gray-600">Travel Pouch</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Gallery Images */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-22.png"
-                alt="YX1 EARPHONES Gallery 1"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
-              <Image
-                src="/images/Bitmap-23.png"
-                alt="YX1 EARPHONES Gallery 2"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="bg-gray-100 rounded-lg h-[calc(512px+1rem)] flex items-center justify-center relative overflow-hidden">
-            <Image
-              src="/images/Bitmap24.png"
-              alt="YX1 EARPHONES Gallery 3"
-              fill
-              className="object-cover"
-            />
-          </div>
+ {/* Features & In The Box */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 md:h-[320px]">
+      {/* Features */}
+     
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">FEATURES</h2>
+      <div className="text-gray-400 leading-relaxed space-y-4 text-xs ">
+        <p>
+         Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.
+        </p>
+        <p>
+          The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.
+        </p>
+      </div>
+    </div>
+    
+    
+    {/* In The Box */}
+    <div className="w-full">
+      <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">IN THE BOX</h2>
+      <div className="space-y-2">
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">2x</span>
+          <span className="text-gray-600">Earphone Unit</span>
         </div>
-      </section>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">6x</span>
+          <span className="text-gray-600">Multi-size Earplugs</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">USB-C Charging Cable</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-orange-500 font-bold">1x</span>
+          <span className="text-gray-600">Travel Pouch</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* You May Also Like */}
-      <section className="container mx-auto px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Product 1 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/headphone2.png"
-                alt="XX99 MARK I"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX99 MARK I</h3>
-            <Button variant="primary" href="/product/xx99-mark-i-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 2 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/headphone3.png"
-                alt="XX59"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">XX59</h3>
-            <Button variant="primary" href="/product/xx59-headphones" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-          
-          {/* Product 3 */}
-          <div className="text-center">
-            <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center relative overflow-hidden mb-6">
-              <Image
-                src="/images/homepage-speaker.png"
-                alt="ZX9 SPEAKER"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-bold uppercase mb-4">ZX9 SPEAKER</h3>
-            <Button variant="primary" href="/product/zx9-speaker" className="w-full">
-              SEE PRODUCT
-            </Button>
-          </div>
-        </div>
-      </section>
+{/* You May Also Like */}
+<section className="max-w-[1110px] mx-auto px-6 py-16">
+  <h2 className="text-2xl md:text-3xl font-bold uppercase mb-12 text-center">YOU MAY ALSO LIKE</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Product 1 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone-27.png"
+          alt="zx7 speaker"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">XX99 Mark I</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx99-mark-i-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 2 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/headphone3.png"
+          alt="XX99 MARK I"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">xx59</h3>
+       <Button 
+            variant="primary" 
+            href="/product/xx59-headphones"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+    
+    {/* Product 3 */}
+    <div className="text-center w-full md:w-[350px] md:h-[470px]">
+      <div className="bg-gray-100 rounded-lg h-48 md:h-[300px] flex items-center justify-center relative overflow-hidden mb-6">
+        <Image
+          src="/images/speaker2.png"
+          alt="XX9 SPEAKER"
+          width={143}
+          height={173}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-xl font-bold uppercase mb-4">zx7 speaker</h3>
+       <Button 
+            variant="primary" 
+            href="/product/zx7-speaker"
+            className="w-full md:w-auto text-sm md:text-base"
+          >
+            See Product
+          </Button>
+    </div>
+  </div>
+</section>
 
      {/* Categories Navigation - Fixed for mobile */}
 <section className="max-w-[1110px] mx-auto px-6 py-12 md:py-24 mt-[30px] md:mt-[50px] h-auto">
