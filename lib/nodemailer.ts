@@ -1,16 +1,14 @@
-// lib/resend.ts
-import { Resend } from 'resend';
+// lib/nodemailer.ts
+import nodemailer from 'nodemailer';
 
-// Validate environment variable
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not set in environment variables');
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// You'll need to verify your domain in Resend dashboard
-// For now, use a domain you own or the Resend test domain
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+// Create transporter (using Gmail)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER, // Your Gmail
+    pass: process.env.EMAIL_APP_PASSWORD, // Gmail App Password
+  },
+});
 
 export interface OrderItem {
   id: string;
@@ -39,7 +37,7 @@ export interface OrderData {
   grandTotal: number;
 }
 
-// Improved email template with better error handling
+// Your existing email template function (copy from resend.ts)
 export const orderConfirmationTemplate = (order: OrderData) => {
   const itemsHtml = order.items.map((item) => `
     <div class="order-item">
@@ -59,7 +57,6 @@ export const orderConfirmationTemplate = (order: OrderData) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Confirmation - Audiophile</title>
   <style>
-    /* Your existing CSS remains the same */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #191919; background-color: #fafafa; padding: 20px; }
     .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
@@ -166,24 +163,21 @@ export const orderConfirmationTemplate = (order: OrderData) => {
 
 export const sendOrderConfirmationEmail = async (order: OrderData) => {
   try {
-    console.log('Attempting to send email to:', order.email);
+    console.log('📧 Attempting to send email to:', order.email);
     
-    const { data, error } = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: [order.email],
+    const mailOptions = {
+      from: `Audiophile <${process.env.EMAIL_USER}>`,
+      to: order.email,
       subject: `Order Confirmation #${order.orderNumber} - Audiophile`,
       html: orderConfirmationTemplate(order),
-    });
+    };
 
-    if (error) {
-      console.error('Resend API Error:', error);
-      return { success: false, error };
-    }
+    const result = await transporter.sendMail(mailOptions);
+    console.log('✅ Email sent successfully via Nodemailer:', result.messageId);
+    return { success: true, data: result };
 
-    console.log('✅ Email sent successfully:', data);
-    return { success: true, data };
   } catch (error) {
-    console.error('❌ Failed to send email:', error);
+    console.error('❌ Nodemailer error:', error);
     return { success: false, error };
   }
 };
